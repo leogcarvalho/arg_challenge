@@ -8,10 +8,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 class ArgyleChallenge(unittest.TestCase):
 
     def setUp(self):
-        try:
-            self.driver = webdriver.Remote('http://selenium:4444/wd/hub', desired_capabilities=DesiredCapabilities.CHROME)
-        except:
-            self.driver = webdriver.Chrome()
+        self.driver = webdriver.Remote('http://selenium:4444/wd/hub', desired_capabilities=DesiredCapabilities.CHROME)
 
     def test_login_invalid_credentials(self):
         driver = self.driver
